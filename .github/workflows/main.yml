@@ -34,4 +34,4 @@ jobs:
         
         #Deploy Surge
       - name: Deploy Surge
-        run: surge ./build Bootcamp-Assignment4.surge.sh --token ${{secrets.surge_token}}
+        run: surge ./build Bootcamp-Assignment04.surge.sh --token ${{secrets.surge_token}}
