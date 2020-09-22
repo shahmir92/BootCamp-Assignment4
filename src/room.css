@@ -1,0 +1,13 @@
+.room {
+    height: 100vh;
+}
+
+.night{
+    background-color: gray;
+    color: white;
+}
+
+.day{
+    background-color: white;
+    color: black;
+}
