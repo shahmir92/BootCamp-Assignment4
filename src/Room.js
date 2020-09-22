@@ -1,33 +1,36 @@
 import React from 'react';
 import './room.css'
 
-
 function Room(){
 
-let [Counter , setCounter] = React.useState(0);
+let [Counter , setCounter] = React.useState(23);
 let [isLit , setLit] = React.useState(true);
 
-function helpp(){
+function increment(){
     setCounter(++Counter);}
 
 
   return (
-    <div className={`room ${isLit? "day" : "night"}`}> 
+    <div className={`room ${isLit? "day" : "night "}`}> 
         {isLit? "Good Morning" : "Good Night"}
         <br/>
-            <button onClick = {() => setLit(!isLit)}>
-                Click Me
+            <button onClick = {() => {if (Counter == false) {setLit(true)} else{setLit(false)} }}>
+                Night
+            </button>
+
+            <button onClick = {() => {if (Counter == true) {setLit(false)} else{setLit(true)} }}>
+                Day
             </button>
         
         <br/>
-            {"Counter:            " + Counter}
+            {"Room Temperature:" + Counter + "°C"}
         
         <br/>
             <button onClick = {()=> setCounter(--Counter)} >
                 -   
             </button>
             
-            <button onClick = {helpp}>
+            <button onClick = {increment}>
                 +   
             </button>
             
