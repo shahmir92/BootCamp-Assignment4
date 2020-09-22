@@ -1,0 +1,37 @@
+name: Customized React App with Day/Night and Counter Feature
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+        #Install Nodejs
+      - name: Install NodeJS
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
+
+       #INSTALL YARN
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install # will run `yarn test` command
+
+        #BUILD YARN
+      - name: start app
+        run: yarn build
+
+        #Install Surge
+      - name: Install Surge
+        run: npm install --global surge 
+        
+        #Deploy Surge
+      - name: Deploy Surge
+        run: surge ./build Bootcamp-Assignment4.surge.sh --token ${{secrets.surge_token}}
