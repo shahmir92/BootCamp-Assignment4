@@ -14,11 +14,11 @@ function increment(){
     <div className={`room ${isLit? "day" : "night "}`}> 
         {isLit? "Good Morning" : "Good Night"}
         <br/>
-            <button onClick = {() => {if (Counter == false) {setLit(true)} else{setLit(false)} }}>
+            <button onClick = {() => {if (Counter === false) {setLit(true)} else{setLit(false)} }}>
                 Night
             </button>
 
-            <button onClick = {() => {if (Counter == true) {setLit(false)} else{setLit(true)} }}>
+            <button onClick = {() => {if (Counter === true) {setLit(false)} else{setLit(true)} }}>
                 Day
             </button>
         
